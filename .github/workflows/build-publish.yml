@@ -112,12 +112,12 @@ jobs:
                  echo "digest=$digest"
                  echo "${{ vars.JF_URL }}/${{ env.DOCKER_REPO }}/${{ env.IMAGE_NAME }}@$digest" > metadata.json
                  jf rt build-docker-create ${{ env.DOCKER_REPO }} --image-file metadata.json 
-            - name: python curation
-              run: |
-                rm -f Pipfile 
-                jf pip-config --repo-resolve=python-virtual
-                jf audit || true
-                jf ca || true
+            # - name: python curation
+            #   run: |
+            #     rm -f Pipfile 
+            #     jf pip-config --repo-resolve=python-virtual
+            #     jf audit || true
+            #     jf ca || true
             - name: publish build info
               run: |
                 jf rt build-collect-env 
