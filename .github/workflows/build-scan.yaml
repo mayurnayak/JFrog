@@ -43,7 +43,7 @@ jobs:
       # 🐳 Build image
       - name: Build Docker image
         run: |
-          docker build -t $JF_URL/$DOCKER_REPO/$IMAGE_NAME:$IMAGE_TAG .
+          docker build -t ${{ vars.JF_URL }}/$DOCKER_REPO/$IMAGE_NAME:$IMAGE_TAG .
 
       # 📤 Push with build-info
       - name: Push image with build-info
