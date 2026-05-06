@@ -60,6 +60,4 @@ jobs:
       # 🔍 Xray scan
       - name: Scan build (Xray)
         run: |
-          jf build-scan $JFROG_CLI_BUILD_NAME $JFROG_CLI_BUILD_NUMBER \
-            --vuln \
-            --fail=false
+          jf xr build-scan $JFROG_CLI_BUILD_NAME $JFROG_CLI_BUILD_NUMBER --fail=false
