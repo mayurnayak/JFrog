@@ -58,6 +58,11 @@ jobs:
           jf rt build-publish $JFROG_CLI_BUILD_NAME $JFROG_CLI_BUILD_NUMBER
 
       # 🔍 Xray scan
-      - name: Scan build (Xray)
-        run: |
-          jf xr build-scan $JFROG_CLI_BUILD_NAME $JFROG_CLI_BUILD_NUMBER --fail=false
+      - name: build scan
+        run: |   
+                echo $JFROG_CLI_COMMAND_SUMMARY_OUTPUT_DIR
+                ls -ltra $JFROG_CLI_COMMAND_SUMMARY_OUTPUT_DIR
+                jf build-scan --vuln --fail=false
+      # - name: Scan build (Xray)
+      #   run: |
+      #     jf xr build-scan $JFROG_CLI_BUILD_NAME $JFROG_CLI_BUILD_NUMBER --fail=false
