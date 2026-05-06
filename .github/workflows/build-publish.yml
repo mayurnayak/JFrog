@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest              
         env:
           DOCKER_REPO: 'docker-local'
-          IMAGE_NAME: 'my-very-cool-image:${{ github.run_number }}'
+          IMAGE_NAME: 'my-docker-demo-image:${{ github.run_number }}'
           JF_URL: https://${{ vars.JF_URL }}/
           DOCKER_CLI_EXPERIMENTAL: enabled
           CI: true
